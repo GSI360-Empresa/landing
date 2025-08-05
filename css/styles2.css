@@ -11791,4 +11791,39 @@ section#contact form#contactForm :-ms-input-placeholder {
     "Segoe UI Emoji",
     "Segoe UI Symbol",
     "Noto Color Emoji";
+
 }
+/* Nuevo IMSO*/
+.page-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.page-section h2.section-heading {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.page-section h3.section-subheading {
+    font-size: 1.15rem;
+}
+.transition-3d:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.card-body .service-icon {
+    display: inline-block;
+    background-color: var(--bs-primary-bg-subtle, #e9f0f6);
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+.card-body .service-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.list-group-item i {
+    width: 20px;
+    text-align: center;
+}
+
