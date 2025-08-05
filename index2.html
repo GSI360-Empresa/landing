@@ -12,6 +12,42 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" />
   <link href="css/styles.css" rel="stylesheet" />
+  
+
+<style>
+.page-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.page-section h2.section-heading {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.page-section h3.section-subheading {
+    font-size: 1.15rem;
+}
+.transition-3d:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.card-body .service-icon {
+    display: inline-block;
+    background-color: var(--bs-primary-bg-subtle, #e9f0f6);
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+.card-body .service-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.list-group-item i {
+    width: 20px;
+    text-align: center;
+}
+</style>
 </head>
 
 <body id="page-top">
@@ -43,61 +79,75 @@
   </header>
 
   <!-- Services-->  
-  <section class="page-section" id="services">
+  <section class="page-section bg-light py-5" id="services">
     <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="section-heading text-uppercase">Nuestros Servicios</h2>
-        <h3 class="section-subheading text-muted">Impulsamos tu crecimiento con soluciones integrales de tecnología, talento y formación.</h3>
-      </div>
-      <div class="row g-4">
-        <!-- Card 1: Transformación Digital -->
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body text-center">
-              <img src="assets/img/icons/transformacion-digital-realista.png" alt="Transformación Digital" class="icon-realista mb-3" />
-              <h3 class="card-title">Tecnología y Procesos</h3>
-              <p class="card-text">Ayudamos a las empresas a comprender sus procesos clave y desarrollar software alineado a sus necesidades
-            reales, que aporta valor tanto al negocio como a las personas, gestionado de forma ágil y cercana.</p>
-              <ul class="list-unstyled text-start">
-                <li>🚀 Metodologías ágiles e hibridas</li>
-                <li>🔍 Análisis funcional y mapeo de procesos</li>
-                <li>🔒 Calidad, seguridad y escalabilidad</li>
-              </ul>
-            </div>
-          </div>
+        <div class="text-center mb-5">
+            <h2 class="section-heading text-uppercase font-weight-bold">Nuestros Servicios</h2>
+            <h3 class="section-subheading text-muted mx-auto" style="max-width: 700px;">
+                Impulsamos tu crecimiento con soluciones integrales de tecnología, talento y formación, diseñadas para los desafíos de hoy.
+            </h3>
         </div>
-        <!-- Card 2: Coaching Organizacional -->
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body text-center">
-              <img src="assets/img/icons/coaching-organizacional-realista.png" alt="Coaching Organizacional" class="icon-realista mb-3" />
-              <h3 class="card-title">Coaching Organizacional</h3>
-              <p class="card-text">Facilitamos procesos transformadores que fortalecen equipos, alinean liderazgos y construyen equipos de alto desempeño.</p>
-              <ul class="list-unstyled text-start">
-                <li>🎯 Talleres de liderazgo práctico</li>
-                <li>🔄 Dinámicas de cultura y valores</li>
-                <li>📈 Coaching Ejecutivo 1:1 y coaching de equipos</li>
-              </ul>
+
+        <div class="row g-5 justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-lg rounded-3 overflow-hidden transition-3d">
+                    <div class="card-body p-4 text-center">
+                        <div class="service-icon mb-4">
+                            <img src="assets/img/icons/transformacion-digital-realista.png" alt="Tecnología y Procesos" class="img-fluid rounded-circle p-2 bg-primary-subtle" style="width: 80px; height: 80px;" />
+                        </div>
+                        <h4 class="card-title text-dark fw-bold mb-3">Tecnología y Procesos</h4>
+                        <p class="card-text text-muted mb-4">
+                            Ayudamos a las empresas a comprender sus procesos clave y a desarrollar software alineado a sus necesidades reales, gestionado de forma ágil y cercana.
+                        </p>
+                        <div class="list-group list-group-flush text-start">
+                            <span class="list-group-item border-0 bg-transparent px-0"><i class="fas fa-rocket text-primary me-2"></i> Metodologías ágiles e híbridas</span>
+                            <span class="list-group-item border-0 bg-transparent px-0"><i class="fas fa-search text-primary me-2"></i> Análisis funcional y mapeo de procesos</span>
+                            <span class="list-group-item border-0 bg-transparent px-0"><i class="fas fa-lock text-primary me-2"></i> Calidad, seguridad y escalabilidad</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <!-- Card 3: Formación Corporativa -->
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body text-center">
-              <img src="assets/img/icons/formacion-corporativa-realista.png" alt="Formación Corporativa" class="icon-realista mb-3" />
-              <h3 class="card-title">Formación Corporativa</h3>
-              <p class="card-text">Programas prácticos en alianza con OTEC, diseñados para abordar desafíos reales y potenciar las habilidades de tu equipo desde el primer día.</p>
-              <ul class="list-unstyled text-start">
-                <li>📚 Material descargable y evaluaciones</li>
-                <li>⏱️ Modalidades presenciales y remotas</li>
-              </ul>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-lg rounded-3 overflow-hidden transition-3d">
+                    <div class="card-body p-4 text-center">
+                        <div class="service-icon mb-4">
+                            <img src="assets/img/icons/coaching-organizacional-realista.png" alt="Coaching Organizacional" class="img-fluid rounded-circle p-2 bg-primary-subtle" style="width: 80px; height: 80px;" />
+                        </div>
+                        <h4 class="card-title text-dark fw-bold mb-3">Coaching Organizacional</h4>
+                        <p class="card-text text-muted mb-4">
+                            Facilitamos procesos transformadores que fortalecen equipos, alinean liderazgos y construyen equipos de alto desempeño.
+                        </p>
+                        <div class="list-group list-group-flush text-start">
+                            <span class="list-group-item border-0 bg-transparent px-0"><i class="fas fa-bullseye text-primary me-2"></i> Talleres de liderazgo práctico</span>
+                            <span class="list-group-item border-0 bg-transparent px-0"><i class="fas fa-sync-alt text-primary me-2"></i> Dinámicas de cultura y valores</span>
+                            <span class="list-group-item border-0 bg-transparent px-0"><i class="fas fa-chart-line text-primary me-2"></i> Coaching Ejecutivo 1:1 y de equipos</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-lg rounded-3 overflow-hidden transition-3d">
+                    <div class="card-body p-4 text-center">
+                        <div class="service-icon mb-4">
+                            <img src="assets/img/icons/formacion-corporativa-realista.png" alt="Formación Corporativa" class="img-fluid rounded-circle p-2 bg-primary-subtle" style="width: 80px; height: 80px;" />
+                        </div>
+                        <h4 class="card-title text-dark fw-bold mb-3">Formación Corporativa</h4>
+                        <p class="card-text text-muted mb-4">
+                            Programas prácticos diseñados para abordar desafíos reales y potenciar las habilidades de tu equipo desde el primer día.
+                        </p>
+                        <div class="list-group list-group-flush text-start">
+                            <span class="list-group-item border-0 bg-transparent px-0"><i class="fas fa-book text-primary me-2"></i> Material descargable y evaluaciones</span>
+                            <span class="list-group-item border-0 bg-transparent px-0"><i class="fas fa-clock text-primary me-2"></i> Modalidades presenciales y remotas</span>
+                            <span class="list-group-item border-0 bg-transparent px-0"><i class="fas fa-medal text-primary me-2"></i> Alianza con OTEC para certificaciones</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
+</section>
 
   <!-- Team, Alliances, Contact, Footer remain unchanged -->
    <!-- Team-->
