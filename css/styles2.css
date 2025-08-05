@@ -11210,7 +11210,8 @@ p {
   font-weight: 700;
 }
 #mainNav .navbar-brand {
-  color: #316cff;
+  /*color: #316cff;*/
+  color: #547A5A;
   font-family:
     "Montserrat",
     -apple-system,
@@ -11826,4 +11827,5 @@ section#contact form#contactForm :-ms-input-placeholder {
     width: 20px;
     text-align: center;
 }
+
 
