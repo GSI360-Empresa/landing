@@ -2988,21 +2988,31 @@ fieldset:disabled .btn {
 }
 
 .btn-primary {
+  /* Color principal del botón */
   --bs-btn-color: #fff;
-  --bs-btn-bg: #316cff;
-  --bs-btn-border-color: #316cff;
+  --bs-btn-bg: #4c8a64; /* Un azul verdoso que armoniza con el #547A5A */
+  --bs-btn-border-color: #4c8a64;
+
+  /* Estado al pasar el mouse (hover) */
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #4177ff;
-  --bs-btn-hover-border-color: #4177ff;
-  --bs-btn-focus-shadow-rgb: 255, 208, 38;
+  --bs-btn-hover-bg: #3e7454; /* Un tono un poco más oscuro del mismo color */
+  --bs-btn-hover-border-color: #3e7454;
+
+  /* Estado al hacer clic (active) */
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #cca000;
-  --bs-btn-active-border-color: #bf9600;
+  --bs-btn-active-bg: #829e88; /* Un tono más claro para crear un efecto de "presionado" */
+  --bs-btn-active-border-color: #829e88;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  
+  /* Sombra al enfocar (focus) */
+  --bs-btn-focus-shadow-rgb: 76, 138, 100; /* Coincide con el color principal del botón */
+
+  /* Estado deshabilitado (disabled) */
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #316cff;
-  --bs-btn-disabled-border-color: #316cff;
+  --bs-btn-disabled-bg: #4c8a64;
+  --bs-btn-disabled-border-color: #4c8a64;
 }
+
 
 .btn-secondary {
   --bs-btn-color: #fff;
@@ -11828,6 +11838,7 @@ section#contact form#contactForm :-ms-input-placeholder {
     width: 20px;
     text-align: center;
 }
+
 
 
 
