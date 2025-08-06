@@ -2987,16 +2987,28 @@ fieldset:disabled .btn {
   opacity: var(--bs-btn-disabled-opacity);
 }
 
+.hero-content {
+background-color: rgba(84, 122, 90, 0.7); /* Verde principal con 70% de opacidad /
+padding: 20px; / Ajusta el padding según necesites /
+border-radius: 10px; / Opcional: bordes redondeados /
+margin-bottom: 20px; / Espacio entre el contenido y el resto de la página */
+}
+
 .btn-primary {
   /* Color principal del botón */
   --bs-btn-color: #fff;
-  --bs-btn-bg: #4c8a64; /* Un azul verdoso que armoniza con el #547A5A */
-  --bs-btn-border-color: #4c8a64;
+ /* --bs-btn-bg: #4c8a64; /* Un azul verdoso que armoniza con el #547A5A */
+  /*--bs-btn-border-color: #4c8a64;*/
+  
+  --bs-btn-bg: #2E543D; /* verde mas oscuro */
+  --bs-btn-border-color: #2E543D;
+  --bs-btn-hover-bg: #1C3727;
+  --bs-btn-hover-border-color: #1C3727;
 
   /* Estado al pasar el mouse (hover) */
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #3e7454; /* Un tono un poco más oscuro del mismo color */
-  --bs-btn-hover-border-color: #3e7454;
+  /*--bs-btn-hover-bg: #3e7454; /* Un tono un poco más oscuro del mismo color */*/
+  /*--bs-btn-hover-border-color: #3e7454;*/
 
   /* Estado al hacer clic (active) */
   --bs-btn-active-color: #fff;
@@ -11853,6 +11865,7 @@ section#contact form#contactForm :-ms-input-placeholder {
     width: 20px;
     text-align: center;
 }
+
 
 
 
