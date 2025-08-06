@@ -3812,7 +3812,7 @@ margin-bottom: 20px; / Espacio entre el contenido y el resto de la página */
   padding: 10px 15px; /* Ajusta el padding para un mejor espaciado */
   font-size: 1rem; /* Mantiene un tamaño de fuente legible */
   font-weight: 500; /* Un peso de fuente ligeramente más grueso para mayor visibilidad */
-  text-transform: uppercase; /* Opcional: letras mayúsculas para un aspecto más formal */
+  /*text-transform: uppercase; /* Opcional: letras mayúsculas para un aspecto más formal */
 
   /* Color del texto en estado normal */
   color: #fff; /* Blanco puro para un contraste máximo sobre el fondo oscuro */
@@ -11901,6 +11901,7 @@ section#contact form#contactForm :-ms-input-placeholder {
     width: 20px;
     text-align: center;
 }
+
 
 
 
