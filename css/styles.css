@@ -75,8 +75,12 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #316cff;
+  /*--bs-link-color: #316cff;
+  --bs-link-hover-color: #cca000;*/
+  
+  --bs-link-color: #F39C12;
   --bs-link-hover-color: #cca000;
+  
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff4cc;
 }
@@ -2987,22 +2991,44 @@ fieldset:disabled .btn {
   opacity: var(--bs-btn-disabled-opacity);
 }
 
-.btn-primary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #316cff;
-  --bs-btn-border-color: #316cff;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #4177ff;
-  --bs-btn-hover-border-color: #4177ff;
-  --bs-btn-focus-shadow-rgb: 255, 208, 38;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #cca000;
-  --bs-btn-active-border-color: #bf9600;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #316cff;
-  --bs-btn-disabled-border-color: #316cff;
+.hero-content {
+background-color: rgba(84, 122, 90, 0.7); /* Verde principal con 70% de opacidad /
+padding: 20px; / Ajusta el padding según necesites /
+border-radius: 10px; / Opcional: bordes redondeados /
+margin-bottom: 20px; / Espacio entre el contenido y el resto de la página */
 }
+
+.btn-primary {
+  /* Color principal del botón */
+  --bs-btn-color: #fff;
+ /* --bs-btn-bg: #4c8a64; /* Un azul verdoso que armoniza con el #547A5A */
+  /*--bs-btn-border-color: #4c8a64;*/
+  
+  --bs-btn-bg: #2E543D; /* verde mas oscuro */
+  --bs-btn-border-color: #2E543D;
+  --bs-btn-hover-bg: #1C3727;
+  --bs-btn-hover-border-color: #1C3727;
+
+  /* Estado al pasar el mouse (hover) */
+  --bs-btn-hover-color: #fff;
+  /*--bs-btn-hover-bg: #3e7454; /* Un tono un poco más oscuro del mismo color */*/
+  /*--bs-btn-hover-border-color: #3e7454;*/
+
+  /* Estado al hacer clic (active) */
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #829e88; /* Un tono más claro para crear un efecto de "presionado" */
+  --bs-btn-active-border-color: #829e88;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  
+  /* Sombra al enfocar (focus) */
+  --bs-btn-focus-shadow-rgb: 76, 138, 100; /* Coincide con el color principal del botón */
+
+  /* Estado deshabilitado (disabled) */
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #4c8a64;
+  --bs-btn-disabled-border-color: #4c8a64;
+}
+
 
 .btn-secondary {
   --bs-btn-color: #fff;
@@ -3771,6 +3797,7 @@ fieldset:disabled .btn {
   list-style: none;
 }
 
+
 .nav-link {
   display: block;
   padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
@@ -3783,6 +3810,10 @@ fieldset:disabled .btn {
     background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out;
 }
+
+
+
+
 @media (prefers-reduced-motion: reduce) {
   .nav-link {
     transition: none;
@@ -6972,7 +7003,8 @@ fieldset:disabled .btn {
 }
 
 .link-primary {
-  color: #316cff !important;
+ /* color: #316cff !important;*/
+   color: #F39C12 !important;
 }
 .link-primary:hover,
 .link-primary:focus {
@@ -11210,7 +11242,8 @@ p {
   font-weight: 700;
 }
 #mainNav .navbar-brand {
-  color: #316cff;
+  /*color: #316cff;*/
+  color: #d2ead6;
   font-family:
     "Montserrat",
     -apple-system,
@@ -11291,17 +11324,33 @@ p {
     margin-right: 0;
   }
 }
+/*
 header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/header-bg.png");
+ /* background-image: url("../assets/img/header-bg.png");*/
+ /* background-image: url("../assets/img/fondo2_verde.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+}*/
+
+/* imagen fondo*/
+header.masthead {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("../assets/img/fondo2_verde.png"); /* Asumiendo que guardaste la imagen gris */
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center top; /* Intenta alinear la parte superior del fondo con la parte superior del header */
+  background-size: cover;
 }
+
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
   font-style: normal;
@@ -11791,4 +11840,49 @@ section#contact form#contactForm :-ms-input-placeholder {
     "Segoe UI Emoji",
     "Segoe UI Symbol",
     "Noto Color Emoji";
+
 }
+/* Nuevo IMSO*/
+.page-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.page-section h2.section-heading {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.page-section h3.section-subheading {
+    font-size: 1.15rem;
+}
+.transition-3d:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.card-body .service-icon {
+    display: inline-block;
+    background-color: var(--bs-primary-bg-subtle, #e9f0f6);
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+.card-body .service-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.list-group-item i {
+    width: 20px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
