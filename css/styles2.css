@@ -11302,18 +11302,33 @@ p {
     margin-right: 0;
   }
 }
+/*
 header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
  /* background-image: url("../assets/img/header-bg.png");*/
-  background-image: url("../assets/img/fondo2_verde.png");
+ /* background-image: url("../assets/img/fondo2_verde.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+}*/
+
+/* imagen fondo*/
+header.masthead {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("../assets/img/fondo2_verde.png"); /* Asumiendo que guardaste la imagen gris */
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center top; /* Intenta alinear la parte superior del fondo con la parte superior del header */
+  background-size: cover;
 }
+
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
   font-style: normal;
@@ -11838,6 +11853,7 @@ section#contact form#contactForm :-ms-input-placeholder {
     width: 20px;
     text-align: center;
 }
+
 
 
 
