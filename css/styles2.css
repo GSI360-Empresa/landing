@@ -7003,7 +7003,8 @@ margin-bottom: 20px; / Espacio entre el contenido y el resto de la página */
 }
 
 .link-primary {
-  color: #316cff !important;
+ /* color: #316cff !important;*/
+   color: #F39C12 !important;
 }
 .link-primary:hover,
 .link-primary:focus {
@@ -11874,6 +11875,7 @@ section#contact form#contactForm :-ms-input-placeholder {
     width: 20px;
     text-align: center;
 }
+
 
 
 
