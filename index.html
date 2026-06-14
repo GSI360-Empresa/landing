@@ -1,233 +1,519 @@
 <!DOCTYPE html>
-<html lang="es-CL">
-
+<html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Consultoría integral en tecnología, coaching y formación corporativa" />
-  <meta name="author" content="GSI360" />
-  <title>GSI360 - Gestión Servicio e Ingeniería</title>
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" />
-  <link href="css/styles.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSI 360 | Tecnología con Sentido</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --azul-marca: #1a5b8c;       /* Azul GSI360 corporativo */
+            --celeste-claro: #7fbdff;    /* Celeste de los anillos del logo */
+            --fondo-suave: #f4f8fc;      /* Gris azulado muy cercano y limpio */
+            --texto-principal: #2d3748;  /* Gris oscuro suave, menos agresivo que el negro */
+            --blanco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--texto-principal);
+            background-color: var(--blanco);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar Cercano */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(26, 91, 140, 0.06);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--azul-marca);
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .nav-links a {
+            color: var(--texto-principal);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            margin-left: 30px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--azul-marca);
+        }
+
+        /* Sección Hero Emocional */
+        .hero {
+            padding: 90px 0 100px 0;
+            background: radial-gradient(circle at 80% 20%, rgba(127, 189, 255, 0.15) 0%, transparent 50%), 
+                        linear-gradient(180deg, var(--blanco) 0%, var(--fondo-suave) 100%);
+            text-align: left;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(26, 91, 140, 0.08);
+            color: var(--azul-marca);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--azul-marca);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            max-width: 850px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #4a5568;
+            max-width: 700px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* Botones Calidos */
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--azul-marca);
+            color: var(--blanco);
+            border: 1px solid var(--azul-marca);
+            box-shadow: 0 4px 14px rgba(26, 91, 140, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #13466b;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:disabled {
+            background-color: #a0aec0;
+            border-color: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Sección Propuesta del Problema */
+        .problem-statement {
+            padding: 80px 0;
+            background-color: var(--blanco);
+            border-bottom: 1px solid rgba(0,0,0,0.02);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--azul-marca);
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--celeste-claro);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .grid-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .statement-text {
+            font-size: 17px;
+            color: #4a5568;
+        }
+
+        /* El Canvas de Pilares / Metodología (3 Tarjetas) */
+        .pillars {
+            padding: 100px 0;
+            background-color: var(--fondo-suave);
+        }
+
+        .grid-three {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: var(--blanco);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(26, 91, 140, 0.04);
+            border: 1px solid rgba(26, 91, 140, 0.03);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(26, 91, 140, 0.08);
+        }
+
+        .card-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            color: var(--celeste-claro);
+            display: block;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            color: var(--azul-marca);
+            margin-bottom: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: #4a5568;
+        }
+
+        /* Modelo de Ingresos / Servicios Canvas */
+        .revenue-services {
+            padding: 100px 0;
+            background-color: var(--blanco);
+        }
+
+        .service-box {
+            border-left: 3px solid var(--azul-marca);
+            padding: 10px 0 10px 30px;
+            margin-top: 40px;
+            max-width: 800px;
+        }
+
+        .service-box h4 {
+            font-size: 18px;
+            color: var(--azul-marca);
+            margin-bottom: 8px;
+        }
+
+        .service-box p {
+            font-size: 15px;
+            color: #4a5568;
+        }
+
+        /* Formulario de Conversión Cercano */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--fondo-suave) 0%, var(--blanco) 100%);
+        }
+
+        .form-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--blanco);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--texto-principal);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #e2e8f0;
+            background-color: #fafbfd;
+            border-radius: 6px;
+            font-size: 15px;
+            color: var(--texto-principal);
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--azul-marca);
+            background-color: var(--blanco);
+            box-shadow: 0 0 0 3px rgba(26, 91, 140, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #12223a;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 50px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 34px; }
+            .grid-two { grid-template-columns: 1fr; gap: 30px; }
+            .form-wrapper { padding: 30px 20px; }
+            .nav-links { display: none; }
+        }
+    </style>
 </head>
+<body>
 
-<body id="page-top">
-  <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="#page-top"><i class="fas fa-home"></i> <strong>GSI 360</strong></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
-        Menu <i class="fas fa-bars ms-1"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
-          <li class="nav-item"><a class="nav-link" href="#alliances">Alianzas</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Masthead-->
-  <header class="masthead">
-    <div class="container text-center">
-      <img src="assets/img/logo.png" alt="GSI360 Logo" style="height:7.5rem;">
-      <h2 class="masthead-subheading mt-3">Conectamos tecnología y personas para impulsar tu negocio.</h2>
-      <a class="btn btn-primary btn-xl text-uppercase mt-4" href="#services">Conócenos</a>
-    </div>
-  </header>
-
-  <!-- Services-->
-  <section class="page-section bg-light py-5" id="services">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="section-heading text-uppercase font-weight-bold">Nuestros Servicios</h2>
-        <h3 class="section-subheading text-muted mx-auto" style="max-width: 700px;">
-          En GSI360 impulsamos tu crecimiento con soluciones integrales de tecnología, talento y formación, diseñadas
-          para los desafíos de hoy.
-        </h3>
-      </div>
-
-      <div class="row g-5 justify-content-center">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100 border-0 shadow-lg rounded-3 overflow-hidden transition-3d">
-            <div class="card-body p-4 text-center">
-              <div class="service-icon mb-4">
-                <img src="assets/img/tecnologia.png" alt="Tecnología y Procesos"
-                  class="img-fluid rounded-circle p-2 bg-primary-subtle" style="width: 80px; height: 80px;" />
-              </div>
-              <h4 class="card-title text-dark fw-bold mb-3">Tecnología y Procesos</h4>
-              <p class="card-text text-muted mb-4">
-                Ayudamos a las empresas a comprender sus procesos clave y desarrollar soluciones tecnológicas alineadas a sus necesidades reales, gestionadas de forma ágil y cercana.
-Integramos herramientas de IA aplicada para mejorar la eficiencia, la automatización y la toma de decisiones.
-              </p>
-              <div class="list-group list-group-flush text-start">
-                <span class="list-group-item border-0 bg-transparent px-0"><i
-                    class="fas fa-rocket text-primary me-2"></i> Metodologías ágiles e híbridas</span>
-                <span class="list-group-item border-0 bg-transparent px-0"><i
-                    class="fas fa-search text-primary me-2"></i> Análisis funcional y mapeo de procesos</span>
-                <span class="list-group-item border-0 bg-transparent px-0"><i class="fas fa-lock text-primary me-2"></i>
-                  Calidad, seguridad, escalabilidad e inteligencia artificial aplicada</span>
-              </div>
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="brand">
+                <svg width="34" height="34" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="#7fbdff" stroke-width="6"/>
+                    <circle cx="50" cy="50" r="26" fill="#1a5b8c"/>
+                    <circle cx="15" cy="50" r="7" fill="#1a5b8c"/>
+                </svg>
+                <span style="font-family: 'Inter', sans-serif; letter-spacing: -0.5px;">GSI 360</span>
+            </a>
+            <div class="nav-links">
+                <a href="#enfoque">Nuestro Enfoque</a>
+                <a href="#arquitectura">Arquitectura de Solución</a>
+                <a href="#servicios">Soluciones</a>
+                <a href="#contacto">Conversar</a>
             </div>
-          </div>
         </div>
+    </header>
 
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100 border-0 shadow-lg rounded-3 overflow-hidden transition-3d">
-            <div class="card-body p-4 text-center">
-              <div class="service-icon mb-4">
-                <img src="assets/img/coaching.png" alt="Coaching Organizacional"
-                  class="img-fluid rounded-circle p-2 bg-primary-subtle" style="width: 80px; height: 80px;" />
-              </div>
-              <h4 class="card-title text-dark fw-bold mb-3">Coaching Organizacional</h4>
-              <p class="card-text text-muted mb-4">
-                Facilitamos procesos transformadores que fortalecen equipos, alinean liderazgos y construyen equipos de
-                alto desempeño, apoyándonos en el análisis de datos e IA para generar diagnósticos más precisos y trazabilidad del impacto.
-              </p>
-              <div class="list-group list-group-flush text-start">
-                <span class="list-group-item border-0 bg-transparent px-0"><i
-                    class="fas fa-bullseye text-primary me-2"></i> Talleres de liderazgo práctico</span>
-                <span class="list-group-item border-0 bg-transparent px-0"><i
-                    class="fas fa-sync-alt text-primary me-2"></i> Dinámicas de cultura y valores</span>
-                <span class="list-group-item border-0 bg-transparent px-0"><i
-                    class="fas fa-chart-line text-primary me-2"></i> Coaching Ejecutivo 1:1 y de equipos</span>
-                <span class="list-group-item border-0 bg-transparent px-0"><i
-                    class="fas fa-chart-line text-primary me-2"></i> Team Building</span>
-              </div>
+    <section class="hero">
+        <div class="container">
+            <span class="hero-badge">Tecnología con sentido humano</span>
+            <h1>No vendemos un software cerrado.<br>Diseñamos la solución que tu equipo realmente va a usar.</h1>
+            <p>Acompañamos a pequeñas, medianas y grandes empresas a dejar atrás las trabas de los procesos manuales. Creamos operaciones eficientes con automatización e Inteligencia Artificial, asegurando un retorno real de tu inversión.</p>
+            <a href="#contacto" class="btn btn-primary">Agendar una Entrevista Diagnóstica</a>
+        </div>
+    </section>
+
+    <section class="problem-statement" id="enfoque">
+        <div class="container grid-two">
+            <div>
+                <span class="subtitle">La realidad del mercado</span>
+                <h2>¿Por qué fallan los proyectos tecnológicos tradicionales?</h2>
             </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100 border-0 shadow-lg rounded-3 overflow-hidden transition-3d">
-            <div class="card-body p-4 text-center">
-              <div class="service-icon mb-4">
-                <img src="assets/img/formacion2.png" alt="Formación Corporativa"
-                  class="img-fluid rounded-circle p-2 bg-primary-subtle" style="width: 80px; height: 80px;" />
-              </div>
-              <h4 class="card-title text-dark fw-bold mb-3">Formación Corporativa</h4>
-              <p class="card-text text-muted mb-4">
-                Programas prácticos diseñados para abordar desafíos reales y potenciar las habilidades de tu equipo
-                desde el primer día.
-              </p>
-              <div class="list-group list-group-flush text-start">
-                <span class="list-group-item border-0 bg-transparent px-0"><i class="fas fa-book text-primary me-2"></i>
-                  Material descargable y evaluaciones</span>
-                <span class="list-group-item border-0 bg-transparent px-0"><i
-                    class="fas fa-clock text-primary me-2"></i> Modalidades presenciales y remotas</span>
-                <span class="list-group-item border-0 bg-transparent px-0"><i
-                    class="fas fa-medal text-primary me-2"></i> Alianza con OTEC para certificaciones</span>
-              </div>
+            <div class="statement-text">
+                <p>La mayoría de los proveedores llegan intentando venderte la licencia más cara o un software de plantilla rígido que obliga a tu empresa a cambiar cómo trabaja. </p>
+                <br>
+                <p>En <strong>GSI 360</strong> lo hacemos al revés: somos <strong>arquitectos de soluciones</strong>. Nos sentamos contigo, entendemos el dolor financiero u operativo de tu negocio (ya sea en una viña, una fintech o una operation logística) y construimos trajes a la medida con honestidad técnica.</p>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Team, Alliances, Contact, Footer remain unchanged -->
-  <!-- Team-->
-  <section class="page-section bg-light" id="team">
-    <div class="container">
-      <div class="text-center  mb-5">
-        <h2 class="section-heading text-uppercase">Nuestro Equipo</h2>
-        <h3 class="section-subheading text-muted">Impulsamos tu crecimiento con soluciones integrales de tecnología,
-          talento y formación.</h3>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-3">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="assets/img/team/iris-segura.jpeg" alt="..." />
-            <h4>Iris Segura</h4>
-            <p class="text-muted">
-              Fundadora, CEO & Partner de Proyectos <br> “Eficiencia operativa y el desarrollo de equipos de alto
-              desempeño para acelerar tus resultados.”
-            </p>
-          </div>
+    <!-- ARQUITECTURA DE SOLUCIÓN ACTUALIZADA CON LAS 3 TARJETAS REQUERIDAS -->
+    <section class="pillars" id="arquitectura">
+        <div class="container">
+            <div style="text-align: center; max-width: 750px; margin: 0 auto;">
+                <span class="subtitle">Entendemos el dolor antes que la herramienta</span>
+                <h2>Nuestra Arquitectura de Solución</h2>
+                <p style="color: #4a5568; margin-top: 10px;">
+                    No imponemos infraestructura rígida de entrada. Evaluamos la situación de forma integral y honesta para recomendar únicamente lo que genera rentabilidad operativa.
+                </p>
+            </div>
+            
+            <div class="grid-three">
+                <!-- Tarjeta 1: Identificación -->
+                <div class="card">
+                    <span class="card-num">01</span>
+                    <h3>Identificación de Situación Actual</h3>
+                    <p>Auditamos a fondo el panorama de tu empresa. Realizamos un levantamiento minucioso para <strong>identificar el estado de tus procesos internos y tu infraestructura tecnológica actual</strong>, localizando fugas de valor antes de proponer cambios.</p>
+                </div>
+                <!-- Tarjeta 2: Solución Real Agnóstica -->
+                <div class="card">
+                    <span class="card-num">02</span>
+                    <h3>Estrategia y Solución Real</h3>
+                    <p>Recomendamos lo que verdaderamente resuelve el problema. Buscamos primero <strong>optimizar con la tecnología que el cliente ya tiene</strong>. Si no basta, guiamos en la <strong>adquisición de un sistema SaaS de nuestro stack o cualquier otro del mercado</strong> con total neutralidad comercial.</p>
+                </div>
+                <!-- Tarjeta 3: Desarrollo a Medida -->
+                <div class="card">
+                    <span class="card-num">03</span>
+                    <h3>Desarrollo a la Medida</h3>
+                    <p>Si la problemática es única o representa tu ventaja competitiva y las herramientas del mercado no logran cubrirla, pasamos a la acción: <strong>diseñamos y desarrollamos a la medida lo que tu empresa realmente necesite</strong> para operar con autonomía.</p>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-3">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="assets/img/team/marcelo-aude.jpg" alt="..." />
-            <h4>Marcelo Aude</h4>
-            <p class="text-muted">
-              Consultor Innovación Tecnológica <br> “Soluciones de automatización e IA que reducen costos y elevan la
-              calidad de tus procesos.”
-            </p>
-          </div>
+    </section>
+
+    <!-- SECCIÓN DE SERVICIOS ACTUALIZADA CON CONSULTORÍA Y COACHING -->
+    <section class="revenue-services" id="servicios">
+        <div class="container">
+            <span class="subtitle">Cómo trabajamos juntos</span>
+            <h2>Soluciones pensadas para cada etapa de crecimiento</h2>
+            
+            <div class="service-box">
+                <h4>1. Diagnóstico GSI 360 (Servicio de Entrada Pagado)</h4>
+                <p>Evaluamos la brecha entre tu operación manual actual y tu potencial tecnológico real. Te entregamos un mapa claro de qué automatizar, en qué orden y cuál es el ROI esperado antes de que gastes en desarrollo.</p>
+            </div>
+
+            <div class="service-box">
+                <h4>2. Ingeniería de Software, IA y Automatización sistémica</h4>
+                <p>Construcción por hitos y entregables de tus flujos de trabajo críticos. Integración de modelos de Inteligencia Artificial prácticos enfocados en ahorrar tiempo y eliminar tareas repetitivas.</p>
+            </div>
+
+            <div class="service-box">
+                <h4>3. Acompañamiento Recurrente y Consultoría Estratégica</h4>
+                <p>Nos convertimos en tu partner de confianza a largo plazo. Este ecosistema de acompañamiento integral está diseñado de forma versátil para proveer de acuerdo a tu necesidad: <strong>consultoría técnica especializada, reingeniería de procesos operativos, o coaching ejecutivo</strong> para guiar a los líderes en la gestión del cambio cultural.</p>
+            </div>
         </div>
-        <div class="col-lg-3"></div>
-      </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- FORMULARIO DE CONVERSIÓN FUNCIONAL CON REDIRECCIÓN -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="form-wrapper">
+                <div style="text-align: center; margin-bottom: 35px;">
+                    <span class="subtitle">Contacto directo</span>
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: var(--azul-marca);">Hablemos de tu negocio</h3>
+                    <p style="color: #64748b; font-size: 14px; margin-top: 5px;">Sin tecnicismos burocráticos. Una conversación de dueños a socios.</p>
+                </div>
 
-
-  <!-- Alianzas -->
-  <!--section class="page-section py-5" id="alliances">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="section-heading text-uppercase font-weight-bold">Nuestras Alianzas</h2>
-        <h3 class="section-subheading text-muted">Trabajamos con los mejores partners para potenciar tu negocio.</h3>
-      </div>
-
-      <div class="row align-items-center justify-content-center">
-        <div class="col-lg-3 col-md-4 col-sm-6 text-center mb-4">
-          <img style="height: 6.5em !important;" class="img-fluid img-brand d-block mx-auto"
-            src="assets/img/alliance/cronoit-logo.png" alt="Crono IT" aria-label="Crono IT Logo" />
-          <p class="text-muted">CRONO IT</p>
+                <form id="form-gsi360" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- CONFIGURACIÓN DE ENVÍO -->
+                    <input type="hidden" name="access_key" value="a53f8b36-842f-4e1b-9864-dece061fd136">
+                    <input type="hidden" name="subject" value="Nuevo Lead de Diagnóstico - GSI 360">
+                    <input type="hidden" name="from_name" value="Landing Page GSI 360">
+                    
+                    <div class="form-group">
+                        <label for="nombre">Tu Nombre</label>
+                        <input type="text" id="nombre" name="Nombre Completo" required placeholder="Ej. Iris Segura">
+                    </div>
+                    <div class="form-group">
+                        <label for="empresa">Empresa / Rubro</label>
+                        <input type="text" id="empresa" name="Empresa o Rubro" required placeholder="Ej. Viña o Fintech chilena">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico Corporativo</label>
+                        <input type="email" id="email" name="Email Corporativo" required placeholder="name@empresa.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">¿Cuál es el proceso manual o flujo crítico que hoy te quita tiempo o causa errores?</label>
+                        <textarea id="mensaje" name="Problema Operativo" rows="4" required placeholder="Cuéntanos brevemente qué te gustaría ordenar o automatizar..."></textarea>
+                    </div>
+                    <button type="submit" id="btn-submit" class="btn btn-primary" style="width: 100%;">Solicitar Entrevista de Diagnóstico</button>
+                </form>
+            </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 text-center mb-4">
-          <img style="height: 6.5em !important;" class="img-fluid img-brand d-block mx-auto"
-            src="assets/img/alliance/tgtgroup.jpg" alt="TGT" aria-label="TGT Logo" />
-          <p class="text-muted">TGT GROUP</p>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 text-center mb-4">
-          <img style="height: 6.5em !important;" class="img-fluid img-brand d-block mx-auto"
-            src="assets/img/alliance/catalizando_icono.webp" alt="Catalizando" aria-label="Catalizando Logo" />
-          <p class="text-muted">Catalizando</p>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 text-center mb-4">
-          <img style="height: 6.5em !important;" class="img-fluid img-brand d-block mx-auto"
-            src="assets/img/alliance/cronoit-logo.png" alt="Crono IT" aria-label="Crono IT Logo" />
-          <p class="text-muted">Crecentia</p>
-        </div>
-      </div>
-    </div>
-</section-->
+    </section>
 
-  <!-- Contacto -->
-  <section class="page-section" id="contact">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="section-heading text-uppercase">Contáctanos</h2>
-        <h3 class="section-subheading text-muted">gsi360.spa@gmail.com.</h3>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Footer-->
-  <footer class="footer py-4">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-4 text-lg-start">Copyright &copy; GSI 360 SPA 2025</div>
-        <div class="col-lg-4 my-3 my-lg-0">
-          <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <footer>
+        <div class="container">
+            <p style="margin-bottom: 15px;">&copy; 2026 GSI 360 SpA. Gestión Sistémica Integral. Tecnología con Propósito.</p>
+            <p>Santiago, Chile — Plataforma Oficial: <a href="https://www.gsi360.cl">www.gsi360.cl</a></p>
         </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/scripts.js"></script>
+    <!-- LÓGICA DE PROCESAMIENTO Y REDIRECCIÓN -->
+    <script>
+        const $form = document.getElementById('form-gsi360');
+        const $btnSubmit = document.getElementById('btn-submit');
+        const googleCalendarUrl = "https://calendar.app.google/Xg3om8dvCiotYMWb7";
+
+        $form.addEventListener('submit', async (event) => {
+            event.preventDefault(); 
+            
+            $btnSubmit.disabled = true;
+            $btnSubmit.innerText = "Procesando solicitud...";
+
+            const formData = new FormData($form);
+
+            try {
+                const response = await fetch($form.action, {
+                    method: $form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    $form.reset();
+                    alert('¡Datos recibidos con éxito! A continuación, elige el horario para tu entrevista de diagnóstico en nuestro Google Calendar.');
+                    window.location.href = googleCalendarUrl;
+                } else {
+                    throw new Error('Error en el servidor externo');
+                }
+
+            } catch (error) {
+                alert('Tuvimos un problema temporal al enviar los datos. Por favor, vuelve a intentarlo o escríbenos directamente a contacto@gsi360.cl.');
+                $btnSubmit.disabled = false;
+                $btnSubmit.innerText = "Solicitar Entrevista de Diagnóstico";
+            }
+        });
+    </script>
+
 </body>
-
 </html>
