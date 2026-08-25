@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSI 360 | Tecnología con Sentido</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --azul-marca: #1a5b8c;       /* Azul GSI360 corporativo */
+            --celeste-claro: #7fbdff;    /* Celeste de los anillos del logo */
+            --fondo-suave: #f4f8fc;      /* Gris azulado muy cercano y limpio */
+            --texto-principal: #2d3748;  /* Gris oscuro suave, menos agresivo que el negro */
+            --blanco: #ffffff;
+            --acento: #7ed957;
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--texto-principal);
+            background-color: var(--blanco);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar Cercano */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(26, 91, 140, 0.06);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--azul-marca);
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .nav-links a {
+            color: var(--texto-principal);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            margin-left: 30px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--azul-marca);
+        }
+
+        /* Sección Hero Emocional */
+        .hero {
+            padding: 90px 0 100px 0;
+            background: radial-gradient(circle at 80% 20%, rgba(127, 189, 255, 0.15) 0%, transparent 50%), 
+                        linear-gradient(180deg, var(--blanco) 0%, var(--fondo-suave) 100%);
+            text-align: left;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(26, 91, 140, 0.08);
+            color: var(--azul-marca);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans",
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 48px;
+            color: var(--azul-marca);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            max-width: 850px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #4a5568;
+            max-width: 700px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* Botones Calidos */
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--azul-marca);
+            color: var(--blanco);
+            border: 1px solid var(--azul-marca);
+            box-shadow: 0 4px 14px rgba(26, 91, 140, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #13466b;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:disabled {
+            background-color: #a0aec0;
+            border-color: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Sección Propuesta del Problema */
+        .problem-statement {
+            padding: 80px 0;
+            background-color: var(--blanco);
+            border-bottom: 1px solid rgba(0,0,0,0.02);
+        }
+
+        h2 {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans",
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 36px;
+            color: var(--azul-marca);
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: inline-block;
+            background-color: rgba(26, 91, 140, 0.08);
+            color: var(--azul-marca);
+            padding: 6px 16px;
+            border-radius: 30px;
+        }
+
+        .grid-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .statement-text {
+            font-size: 17px;
+            color: #4a5568;
+        }
+
+        /* El Canvas de Pilares / Metodología (3 Tarjetas) */
+        .pillars {
+            padding: 100px 0;
+            background-color: var(--fondo-suave);
+        }
+
+        .grid-three {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: var(--blanco);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(26, 91, 140, 0.04);
+            border: 1px solid rgba(26, 91, 140, 0.03);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(26, 91, 140, 0.08);
+        }
+
+        .card-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            color: var(--celeste-claro);
+            display: block;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            color: var(--azul-marca);
+            margin-bottom: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: #4a5568;
+        }
+
+        /* Modelo de Ingresos / Servicios Canvas */
+        .revenue-services {
+            padding: 100px 0;
+            background-color: var(--blanco);
+        }
+
+        .service-box {
+            border-left: 3px solid var(--azul-marca);
+            padding: 10px 0 10px 30px;
+            margin-top: 40px;
+            max-width: 800px;
+        }
+
+        .service-box h4 {
+            font-size: 18px;
+            color: var(--azul-marca);
+            margin-bottom: 8px;
+        }
+
+        .service-box p {
+            font-size: 15px;
+            color: #4a5568;
+        }
+
+        /* Formulario de Conversión Cercano */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--fondo-suave) 0%, var(--blanco) 100%);
+        }
+
+        .form-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--blanco);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+
+        .value-icon {
+            width: 24px;
+            height: 24px;
+            background-color: var(--celeste-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul-marca);
+            flex-shrink: 0;
+            margin-top: 2px;
+            border-radius: 50%;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .about-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--texto-principal);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #e2e8f0;
+            background-color: #fafbfd;
+            border-radius: 6px;
+            font-size: 15px;
+            color: var(--texto-principal);
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--azul-marca);
+            background-color: var(--blanco);
+            box-shadow: 0 0 0 3px rgba(26, 91, 140, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #12223a;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 50px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 34px; }
+            .grid-two { grid-template-columns: 1fr; gap: 30px; }
+            .form-wrapper { padding: 30px 20px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="brand">
+    <img src="assets/img/360-gsi- definitivo cuad.png" alt="Logo GSI 360" style="width: 34px; height: 34px; object-fit: contain; vertical-align: middle;">
+    <span style="font-family: 'Inter', sans-serif; letter-spacing: -0.5px; vertical-align: middle; margin-left: 8px;">GSI 360</span>
+</a>
+            <div class="nav-links">
+                <a href="#enfoque">Nuestro Enfoque</a>
+                <a href="#arquitectura">Arquitectura de Solución</a>
+                <a href="#servicios">Soluciones</a>
+                <a href="#contacto">Conversar</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <span class="hero-badge">Tecnología con sentido</span>
+            <img src="assets/img/gsi360animado.gif" width="50%" align="right">
+            <h1>Antes de venderte tecnología, <em style="color: var(--azul-marca); font-style: italic; font-weight: 500;">revisamos la que ya tienes</em>.</h1>
+            <p>Diagnosticamos primero. Si la brecha es real, te acompañamos a cerrarla — con alcance y precio definidos desde el día uno, no sobre la marcha.</p>
+            <a href="#contacto" class="btn btn-primary">Agendar una Conversación</a>
+        </div>
+    </section>
+
+    <section class="problem-statement" id="enfoque">
+        <div class="container grid-one">
+            <div>
+                <img src="assets/img/conversacion.png" width="50%" align="right" margin="25">
+                <span class="subtitle">La realidad del mercado</span>
+                <h2>¿Por qué fallan los proyectos tecnológicos tradicionales?</h2>
+                <p style="max-width: 640px;">La mayoría de los proveedores te venden soluciones rígidas antes de entender tu problema. Si corres a una solución rápida, terminas poniendo un parche a una herida profunda que sigue doliendo.</p>
+                <p style="max-width: 640px; margin-top: 16px;">En <strong>GSI 360</strong> lo hacemos al revés. Nos sentamos contigo a entender el dolor operativo de tu negocio — vitivinícola, financiero o logístico — y lo resolvemos desde la raíz, sin plantillas ni comisiones ocultas.</p>
+                <h3 style="font-family: 'Fraunces', serif; font-weight: 600; color: var(--navy); font-size: 20px; margin-top: 36px; margin-bottom: 20px;">Nos caracterizamos por:</h3>
+
+                <div class="about-values">
+                  <div class="value-item">
+                    <div class="value-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </div>
+                    <div>
+                      <h4 class="value-title">Atención 1-a-1</h4>
+                      <p class="value-desc">Comunicación directa con los Especialistas.</p>
+                    </div>
+                  </div>
+                  <div class="value-item">
+                    <div class="value-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </div>
+                    <div>
+                      <h4 class="value-title">Sin Plantillas</h4>
+                      <p class="value-desc">Estrategias diseñadas exclusivamente para ti.</p>
+                    </div>
+                  </div>
+                  <div class="value-item">
+                    <div class="value-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </div>
+                    <div>
+                      <h4 class="value-title">Visión Holística</h4>
+                      <p class="value-desc">Evaluación 360° de procesos, personas y tecnología.</p>
+                    </div>
+                  </div>
+                  <div class="value-item">
+                    <div class="value-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </div>
+                    <div>
+                      <h4 class="value-title">Agilidad </h4>
+                      <p class="value-desc">Respuestas rápidas, flexibles y sin burocracia.</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="statement-text">
+                
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- ARQUITECTURA DE SOLUCIÓN ACTUALIZADA CON LAS 3 TARJETAS REQUERIDAS -->
+    <section class="pillars" id="arquitectura">
+        <div class="container">
+            <div style="text-align: center; max-width: 750px; margin: 0 auto;">
+                <span class="subtitle">Entendemos el dolor antes que la herramienta</span>
+                <h2>Nuestra Arquitectura de Solución</h2>
+                <p style="color: #4a5568; margin-top: 10px;">
+                    No imponemos infraestructura rígida de entrada. Evaluamos la situación de forma integral y honesta para recomendar únicamente lo que genera rentabilidad operativa.
+                </p>
+            </div>
+            
+            <div class="grid-three">
+                <!-- Tarjeta 1: Identificación -->
+                <div class="card">
+                    <span class="card-num">01</span>
+                    <h3>Identificación de Situación Actual</h3>
+                    <p>Auditamos a fondo el panorama de tu empresa. Realizamos un levantamiento minucioso para <strong>identificar el estado de tus procesos internos y tu infraestructura tecnológica actual</strong>, localizando fugas de valor antes de proponer cambios.</p>
+                </div>
+                <!-- Tarjeta 2: Solución Real Agnóstica -->
+                <div class="card">
+                    <span class="card-num">02</span>
+                    <h3>Estrategia y Solución Real</h3>
+                    <p>Recomendamos lo que verdaderamente resuelve el problema. Buscamos primero <strong>optimizar con la tecnología que el cliente ya tiene</strong>. Si no basta, guiamos en la <strong>adquisición de un sistema SaaS de nuestro stack o cualquier otro del mercado</strong> con total neutralidad comercial.</p>
+                </div>
+                <!-- Tarjeta 3: Desarrollo a Medida -->
+                <div class="card">
+                    <span class="card-num">03</span>
+                    <h3>Desarrollo a la Medida</h3>
+                    <p>Si la problemática es única o representa tu ventaja competitiva y las herramientas del mercado no logran cubrirla, pasamos a la acción: <strong>diseñamos y desarrollamos a la medida lo que tu empresa realmente necesite</strong> para operar con autonomía.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE SERVICIOS ACTUALIZADA CON CONSULTORÍA Y COACHING -->
+    <section class="revenue-services" id="servicios">
+        <img src="assets/img/Colaboracion.png" width="25%" align="right" style="
+    margin-right: 50px; margin-left: 20px; ">
+        <div class="container">
+            
+            <span class="subtitle">Cómo trabajamos juntos</span>
+            <h2>Soluciones pensadas para cada etapa de crecimiento</h2>
+            <div class="service-box">
+                <h4>1. Diagnóstico GSI 360 (Servicio de Entrada)</h4>
+                <p>Evaluamos la brecha entre tu operación manual actual y tu potencial tecnológico real. Te entregamos un mapa claro de qué automatizar, en qué orden y cuál es el ROI esperado antes de que gastes en desarrollo.</p>
+            </div>
+
+            <div class="service-box">
+                <h4>2. Transformación de Procesos e Integración de IA</h4>
+                <p>En gsi360 impulsamos la eficiencia de su negocio a través de dos pilares clave:<br>
+<strong> Flujos de trabajo críticos por hitos: </strong>Estructuramos sus operaciones de punta a punta, asegurando el cumplimiento de objetivos mediante entregables claros y auditables.<br>
+
+<strong> Inteligencia Artificial Práctica:</strong> Creamos estrategias de adopción tecnológica enfocadas en eliminar tareas repetitivas y optimizar el tiempo, garantizando un retorno de inversión rápido y sin fricciones operativas.</p>
+            </div>
+
+            <div class="service-box">
+                <h4>3. Acompañamiento Recurrente y Consultoría Estratégica</h4>
+                <p>Nos convertimos en tu partner de confianza a largo plazo. Este ecosistema de acompañamiento integral está diseñado de forma versátil para proveer de acuerdo a tu necesidad: <strong>consultoría técnica especializada, reingeniería de procesos operativos, o coaching ejecutivo</strong> para guiar a los líderes en la gestión del cambio cultural.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE CONVERSIÓN FUNCIONAL CON REDIRECCIÓN -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="form-wrapper">
+                <div style="text-align: center; margin-bottom: 35px;">
+                    <span class="subtitle">Contacto directo</span>
+                    <h3 style="font-size: 28px; color: var(--azul-marca);">Hablemos de tu negocio</h3>
+                    <p style="color: #64748b; font-size: 14px; margin-top: 5px;">Sin tecnicismos burocráticos. Una conversación directa con los Expertos consultores.</p>
+                </div>
+
+                <form id="form-gsi360" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- CONFIGURACIÓN DE ENVÍO -->
+                    <input type="hidden" name="access_key" value="a53f8b36-842f-4e1b-9864-dece061fd136">
+                    <input type="hidden" name="subject" value="Nuevo Lead de Diagnóstico - GSI 360">
+                    <input type="hidden" name="from_name" value="Landing Page GSI 360">
+                    
+                    <div class="form-group">
+                        <label for="nombre">Tu Nombre</label>
+                        <input type="text" id="nombre" name="Nombre Completo" required placeholder="Ej. Ana Perez Soto">
+                    </div>
+                    <div class="form-group">
+                        <label for="empresa">Empresa / Rubro</label>
+                        <input type="text" id="empresa" name="Empresa o Rubro" required placeholder="Ej. Viña, Fintech, Startup u otra categoria">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico Corporativo</label>
+                        <input type="email" id="email" name="Email Corporativo" required placeholder="name@empresa.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">¿Que problema necesitas solucionar?</label>
+                        <textarea id="mensaje" name="Problema Operativo" rows="4" required placeholder="Cuéntanos brevemente cuales son tus dolores hoy"></textarea>
+                    </div>
+                    <button type="submit" id="btn-submit" class="btn btn-primary" style="width: 100%;">Solicitar Conversación</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom: 15px;">&copy; 2026 GSI 360 SpA. </p>
+            <p>Santiago, Chile — Plataforma Oficial: <a href="https://www.gsi360.cl">www.gsi360.cl</a></p>
+        </div>
+    </footer>
+
+    <!-- LÓGICA DE PROCESAMIENTO Y REDIRECCIÓN -->
+    <script>
+        const $form = document.getElementById('form-gsi360');
+        const $btnSubmit = document.getElementById('btn-submit');
+        const googleCalendarUrl = "https://calendar.app.google/Xg3om8dvCiotYMWb7";
+
+        $form.addEventListener('submit', async (event) => {
+            event.preventDefault(); 
+            
+            $btnSubmit.disabled = true;
+            $btnSubmit.innerText = "Procesando solicitud...";
+
+            const formData = new FormData($form);
+
+            try {
+                const response = await fetch($form.action, {
+                    method: $form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    $form.reset();
+                    alert('¡Datos recibidos con éxito! A continuación, elige el horario para tu entrevista de diagnóstico en nuestro Google Calendar.');
+                    window.location.href = googleCalendarUrl;
+                } else {
+                    throw new Error('Error en el servidor externo');
+                }
+
+            } catch (error) {
+                alert('Tuvimos un problema temporal al enviar los datos. Por favor, vuelve a intentarlo o escríbenos directamente a contacto@gsi360.cl.');
+                $btnSubmit.disabled = false;
+                $btnSubmit.innerText = "Solicitar Entrevista de Diagnóstico";
+            }
+        });
+    </script>
+
+</body>
+</html>
